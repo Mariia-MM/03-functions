@@ -107,6 +107,30 @@
 // console.log(getPassWord((lengthD = 8)));
 // //end
 
-
 //function#9
-function 
+//debugger;
+// function delLetters(letter, word) {
+//   let repl = new RegExp(letter, `gi`);
+
+//   let wordN = word.replace(repl, ``);
+
+//   return wordN;
+// }
+// console.log(delLetters(`a`, `blablalalaoaujayavla`));
+// //end
+
+//function#10
+// debugger;
+// function isPalyndrom(sent) {
+//   sentN = sent.toLowerCase().replace(/ /g, ``).split(``).reverse().join(``);
+//   sent = sent.toLowerCase().replace(/ /g, ``);
+//   console.log(sentN);
+//   console.log(sent);
+//   console.log(sentN === sent);
+//   return sentN === sent;
+// }
+// console.log(isPalyndrom("А роза упала на лапу Азора"));
+// //end
+//document.writeln(`Функція №1: ${myFunc("аргументи, якщо є")}`)
+
+//function#11
