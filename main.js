@@ -1,33 +1,33 @@
 //function1;
-function getMaxDigit(number) {
+const getMaxDigit = (number) => {
   numS = String(number);
   console.log(numS);
 
   let n = Math.max(...numS);
   return n;
-}
+};
 //console.log(getMaxDigit(6512975632189));
 
 //function#2
 
-function getNumberDegree(number, degree) {
+const getNumberDegree = (number, degree) => {
   for (let i = 0; i <= degree; i++) {
     number = number * number;
     i++;
   }
   return number;
-}
+};
 // console.log(getNumberDegree(2, 3));
 
 //function#3
 
-function getFormatName(name) {
+const getFormatName = (name) => {
   name = name.toLowerCase(name);
   let name1 = name.slice(0, 1).toUpperCase();
   name = name.slice(1, name.length);
 
   return name1 + name;
-}
+};
 // console.log(getFormatName(`pEteR`));
 
 //function4
@@ -60,7 +60,7 @@ const getRandomNumberAr = (from, to) => {
 
 //function#6
 
-function countThisLetter(letter, word) {
+const countThisLetter = (letter, word) => {
   let count = 0;
   word = word.split(``);
   for (i = 0; i < word.length; i++) {
@@ -71,11 +71,11 @@ function countThisLetter(letter, word) {
     }
   }
   return count;
-}
+};
 // console.log(countThisLetter(`e`, `pineapple`));
 
 //function#7
-function convertMoney(cashForConvert) {
+const convertMoney = (cashForConvert) => {
   cashForConvert = String(cashForConvert);
   if (cashForConvert.endsWith(`$`)) {
     nCash = parseInt(cashForConvert) * 25;
@@ -86,37 +86,43 @@ function convertMoney(cashForConvert) {
   } else {
     console.log(`Currency is entered wrong`);
   }
-}
+};
 // console.log(convertMoney(`3500uaH`));
 
 //function#8
-function getPassWord(length, lengthD = 8) {
-  pWord = Math.trunc(Math.random() * Math.pow(10, length));
+const getPassWord = (length, lengthD) => {
+  lengthD = 8;
+  if (length) {
+    pWord = Math.trunc(Math.random() * Math.pow(10, length));
+  } else {
+    pWord = Math.trunc(Math.random() * Math.pow(10, lengthD));
+  }
+
   return pWord;
-}
+};
 // console.log(getPassWord((lengthD = 8)));
 
 //function#9
 
-function delLetters(letter, word) {
+const delLetters = (letter, word) => {
   let repl = new RegExp(letter, `gi`);
 
   let wordN = word.replace(repl, ``);
 
   return wordN;
-}
+};
 // console.log(delLetters(`a`, `blablalalaoaujayavla`));
 
 //function#10
 
-function isPalyndrom(sent) {
+const isPalyndrom = (sent) => {
   sentN = sent.toLowerCase().replace(/ /g, ``).split(``).reverse().join(``);
   sent = sent.toLowerCase().replace(/ /g, ``);
   console.log(sentN);
   console.log(sent);
   console.log(sentN === sent);
   return sentN === sent;
-}
+};
 // console.log(isPalyndrom("А роза упала на лапу Азора"));
 //end
 //document.writeln(`Функція №1: ${myFunc("аргументи, якщо є")}`);
@@ -138,14 +144,10 @@ document.writeln(`Функція №1.Отримує будь-яке число 
 )}<br>
 Функція №7.Конвертує долари в гривні та навпаки : ${convertMoney(`3500uaH`)}<br>
 Функція №8.Генерації випадкового паролю (тільки числа), довжина встановлюється користувачем
-або по замовчуванню = 8 символам.: ${getPassWord((lengthD = 8))}<br>
+або по замовчуванню = 8 символам.: ${getPassWord(10)}<br>
 Функція №9.Видаляє всі вказані букви з речення:
  ${delLetters(`a`, `blablalalaoaujayavla`)}<br>
 Функція №10.Перевіряє, чи є слово паліндромом. : ${isPalyndrom(
   "А роза упала на лапу Азора"
 )}<br>
-
-
-
-
 `);
