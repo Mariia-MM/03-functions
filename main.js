@@ -10,14 +10,18 @@ const getMaxDigit = (number) => {
 
 //function#2
 
-const getNumberDegree = (number, degree) => {
-  for (let i = 0; i <= degree; i++) {
-    number = number * number;
-    i++;
+const getNumberDegree = (number1, degree) => {
+  let number = 1;
+  for (let i = 0; i < degree; i++) {
+    if (degree !== 0) {
+      number = number1 * number;
+    } else {
+      number = number;
+    }
   }
   return number;
 };
-// console.log(getNumberDegree(2, 3));
+//console.log(getNumberDegree(2, 6));
 
 //function#3
 
@@ -46,17 +50,17 @@ const clearSalary = (salary) => {
 //function5
 
 // function getRandomNumber(fromN, toM) {
-//   randomN = Math.trunc(Math.random() * toM + fromN);
+//  randomN = Math.floor(Math.random() * (toM - fromN) + fromN);
 //   return randomN;
 // }
-// console.log(getRandomNumber(1, 10));
+// console.log(getRandomNumber(5, 13));
 
 //arrow function5
 const getRandomNumberAr = (from, to) => {
-  randomNAr = Math.trunc(Math.random() * to + from);
+  randomNAr = Math.floor(Math.random() * (to - from) + from);
   return randomNAr;
 };
-// console.log(getRandomNumberAr(1, 10));
+//console.log(getRandomNumberAr(8, 34));
 
 //function#6
 
@@ -93,14 +97,14 @@ const convertMoney = (cashForConvert) => {
 const getPassWord = (length, lengthD) => {
   lengthD = 8;
   if (length) {
-    pWord = Math.trunc(Math.random() * Math.pow(10, length));
+    pWord = BigInt(Math.floor(Math.random() * (Math.pow(10, length) - 1) + 1));
   } else {
     pWord = Math.trunc(Math.random() * Math.pow(10, lengthD));
   }
 
-  return pWord;
+  return pWord.toString();
 };
-// console.log(getPassWord((lengthD = 8)));
+//console.log(getPassWord(50));
 
 //function#9
 
@@ -130,7 +134,7 @@ const isPalyndrom = (sent) => {
 document.writeln(`Функція №1.Отримує будь-яке число та виводить найбільшу цифру в цьому числі: ${getMaxDigit(
   6512975632189
 )}<br>
-Функція №2.Визначає ступінь числа: ${getNumberDegree(2, 3)}<br>
+Функція №2.Визначає ступінь числа: ${getNumberDegree(4, 2)}<br>
 Функція №3.Форматує ім'я, роблячи першу букву великою: ${getFormatName(
   `pEteR`
 )}<br>
@@ -144,7 +148,7 @@ document.writeln(`Функція №1.Отримує будь-яке число 
 )}<br>
 Функція №7.Конвертує долари в гривні та навпаки : ${convertMoney(`3500uaH`)}<br>
 Функція №8.Генерації випадкового паролю (тільки числа), довжина встановлюється користувачем
-або по замовчуванню = 8 символам.: ${getPassWord(10)}<br>
+або по замовчуванню = 8 символам.: ${getPassWord(60)}<br>
 Функція №9.Видаляє всі вказані букви з речення:
  ${delLetters(`a`, `blablalalaoaujayavla`)}<br>
 Функція №10.Перевіряє, чи є слово паліндромом. : ${isPalyndrom(
