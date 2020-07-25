@@ -129,6 +129,28 @@ const isPalyndrom = (sent) => {
 };
 // console.log(isPalyndrom("А роза упала на лапу Азора"));
 //end
+
+function delRepeatedLetters(sent) {
+  let rez = [];
+
+  console.log(sent);
+  let repl = new RegExp(` `, `g`);
+  sentN = sent.replace(repl, ``).toLowerCase();
+  console.log(sentN);
+
+  sentN = sentN.split(``);
+  console.log(sentN);
+  console.log(sentN.length);
+
+  for (let i = 0; i < sentN.length; i++) {
+    if (sentN.indexOf(sentN[i]) === sentN.lastIndexOf(sentN[i])) {
+      rez.push(sentN[i]);
+    }
+  }
+  return rez.join(``);
+}
+//console.log(delLetters(`Mari ia Myt Sko`));
+
 //document.writeln(`Функція №1: ${myFunc("аргументи, якщо є")}`);
 
 document.writeln(`Функція №1.Отримує будь-яке число та виводить найбільшу цифру в цьому числі: ${getMaxDigit(
@@ -153,5 +175,8 @@ document.writeln(`Функція №1.Отримує будь-яке число 
  ${delLetters(`a`, `blablalalaoaujayavla`)}<br>
 Функція №10.Перевіряє, чи є слово паліндромом. : ${isPalyndrom(
   "А роза упала на лапу Азора"
+)}<br>
+Функція №11.Видаляє з речення букви, які зустрічаються більше 1 разу : ${delRepeatedLetters(
+  `Mari ia Myt Sko`
 )}<br>
 `);
